@@ -1,0 +1,71 @@
+<aside class="sidebar">
+<script type="text/javascript">
+	function redir(filterval){
+	
+	var rec=document.getElementById('rec_num').value;
+	if(rec=="")
+		rec=5
+	window.location.href="UserProfileRec?filter="+filterval+"&rec_num="+rec+"";
+	return false;
+	}
+
+</script>
+            <ul>	
+                <li>
+                    <h4><a href="UserProfileRec" style="text-decoration:none; color:white;">User Profile Filter</a></h4>
+                    <ul> 
+                        <li>Number of recommendations:<input type="text" id="rec_num" name="rec_num"></li>
+                        <li><a href="" onclick="return redir('favsport')"  >Favourite Sport</a></li>
+                        <li><a href="" onclick="return redir('upcomingweek')">Upcoming Week</a></li>
+                        <li><a href="" onclick="return redir('city')">In your city</a></li>
+                        <li><a href="" onclick="return redir('postcode')">At your Postcode</a></li>
+                    </ul>
+                </li>
+                 <li> 
+                     <h4>Distance Filter</h4> 
+                     <ul> 
+                         <li class="text"> 
+                             <form method="get" class="searchform" action="UserProfileRec" > 
+                                 <p> 
+                                     <input type="text" size="28" value="" name="dist" class="s" placeholder="Enter distance in miles" /> 
+                                 </p>
+                                  <input type="hidden" id="filter" name="filter" value="dist"> 
+                                 <input type='submit' class='btnbuy' value='Recommendations'> 
+                             </form>  
+                         </li> 
+                     </ul> 
+                 </li> 
+                <li>
+                    <h4>Multiple Filters</h4>
+                    <ul>
+                        <li class="text">
+                            <form method="get" class="searchform" action="UserProfileRec" >
+                                <p>
+                                    <input type="text" size="28" value="" name="favsportevent" class="s" placeholder="Enter Sport Here" />
+                                </p>
+                                <p>
+                                    <input type="text" size="28" value="" name="cityevent" class="s" placeholder="Enter City Here" />
+                                </p>           
+                                 <input type="hidden" id="filter" name="filter" value="allfilter">
+                                <input type='submit' class='btnbuy' value='Recommendations'>
+                            </form> 
+                        </li>
+                    </ul>
+                </li>
+                <li id="watchmore">
+                    <h4><a href="EventList" style="text-decoration:none; color:white;">SPORTs</a></h4>
+                    <ul>
+                        <li><a href="EventList?filter=Baseball">Baseball</a></li>
+                        <li><a href="EventList?filter=Ice Skating">Ice Skating</a></li>
+						<li><a href="EventList?filter=Golf">Golf</a></li>
+                        <li><a href="EventList?filter=Indoor-Soccer">Indoor-Soccer</a></li>
+                        <li><a href="EventList?filter=Tennis">Tennis</a></li>
+                        <li><a href="EventList?filter=Table Tennis">Table Tennis</a></li>
+						<li><a href="SportsList">Even More</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+    </div>
+    	<div class="clear"></div>
+    </div>

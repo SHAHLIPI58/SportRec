@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Sport Recommender</title>
+<link rel="stylesheet" href="styles.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+<link rel="stylesheet" href="styles.css" type="text/css" />
+<script>
+<!-- jqurey script -->
+$(document).ready(function(){
+
+    $('#myCarousel').carousel({
+  interval: 3000
+})
+
+$('.carousel .item').each(function(){
+  var next = $(this).next();
+  if (!next.length) {
+    next = $(this).siblings(':first');
+  }
+  next.children(':first-child').clone().appendTo($(this));
+});
+});
+</script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.watches').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            arrows: false,
+        });
+    });
+</script>
+</head>
+
+<body onload="init()">
+<script type="text/javascript" src="javascript.js"></script>
+<div id="container">
+    <header>
+    	<h1><a href="/">Sport<span>Rec</span></a></h1>
+      <!-- <button onclick="getLocation()">Try It</button> -->
+
+<p id="latitude1" hidden  ></p>
+<p id="longitude1" hidden ></p>
+			<div class="glyphicon glyphicon-search" style="float:right; padding-right: 15px; padding: 0px;">
+			
+				<input type="text" name="searchId" value="" class="input"
+					id="searchId" onkeyup="doCompletion()"
+					placeholder="search for an event.." style="padding: 5px; font-size: 16px; width: 315px; float:right; " />
+				<div id="auto-row" >
+					<table id="complete-table" class="gridtable"
+						style="margin-top: 35px; position: absolute; width: 320px; float:right; background-color:#FFFFFF"></table>
+				</div>
+		</div>
+    </header>
+    <nav>
+    	<ul>
+        	<li class="start selected"><a href="Home">Home</a></li>
+			<li class="end"><a href="EventList?filter=Hockey">Hockey</a></li>
+            <li><a href="EventList?filter=Football">Football</a></li>
+            <li><a href="EventList?filter=Volleyball">Volleyball</a></li>
+            <li><a href="EventList?filter=Basketball">Basketball</a></li>
+            <li class=""><a href="#watchmore">More</a></li>   
